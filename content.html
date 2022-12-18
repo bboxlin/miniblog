@@ -31,15 +31,17 @@
           <div class="post-tags" id="labels"></div>
           <hr>
           <div lang="zh-CN" class="gitment-container gitment-header-container">
-            <span><strong id="comments-num"></strong> 条评论</span>
+            <span><strong id="comments-num"></strong> comments</span>
           </div>
+          <a href="#" onclick="RedirectURL();return false;"  target="_blank"> Click to to comment this post!</a>
           <div lang="zh-CN" class="gitment-container gitment-comments-container">
             <ul class="gitment-comments-list" id="comment-list"></ul>
           </div>
           <div style="text-align: center">
             <ul class="pagination" id="pages" style="display: none"></ul>
           </div>
-          <div style="text-align:left">
+             
+          <!-- <div style="text-align:left">
             <div lang="zh-CN" class="gitment-container gitment-editor-container">
               <div id="avatar"></div>
               <div class="gitment-editor-main">
@@ -66,7 +68,7 @@
                 <button class="gitment-editor-submit" disabled>发送</button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="footer" style="text-align: center">
@@ -80,6 +82,11 @@
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
   <script src="js/gitblog.js"></script>
   <script>
+    function RedirectURL() {
+      const words = window.location.href.split('='); 
+      const newlink = "https://github.com/boxianglin/miniblog/issues/" + words[1]
+      window.open(newlink, '_blank');
+    }
     (function(){
       setTimeout(function() {
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
@@ -88,5 +95,7 @@
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
       }, 500);
     })()
+
+ 
   </script>
 </html>
